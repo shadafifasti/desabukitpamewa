@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { MapPin, Phone, Mail, Users, FileText, Camera, BarChart3, MessageSquare, Building2, UsersRound, Calendar, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Users, FileText, Camera, BarChart3, MessageSquare, Building2, UsersRound, Calendar, ArrowRight, Target } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Tables } from "@/integrations/supabase/types";
 import { Layout } from "@/components/Layout";
@@ -20,6 +20,13 @@ const Index = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   const fetchData = async () => {
     try {
@@ -113,45 +120,92 @@ const Index = () => {
             </TabsContent>
 
             <TabsContent value="visi-misi" className="mt-6">
-              <Card className="bg-white border-2 border-village-green">
-                <CardHeader>
-                  <CardTitle className="font-playfair text-2xl text-village-green-dark flex items-center gap-3">
-                    <Users className="w-6 h-6" />
-                    Visi & Misi
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="font-playfair text-xl font-semibold text-village-green-dark mb-3">Visi:</h4>
-                      <p className="font-inter text-muted-foreground text-lg leading-relaxed">
-                        Menjadi desa yang sejahtera, maju, dan mandiri berdasarkan nilai-nilai gotong royong.
+              <div className="space-y-6">
+                {/* Visi Card */}
+                <Card className="bg-gradient-to-br from-village-green to-village-green-dark text-white border-0 shadow-xl">
+                  <CardHeader className="pb-4">
+                    <CardTitle className="font-playfair text-2xl flex items-center gap-3">
+                      <Users className="w-7 h-7" />
+                      VISI
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                      <p className="font-inter text-xl leading-relaxed text-center font-semibold">
+                        BERSATU MEMBANGUN BUKIT PAMEWA YANG JUJUR, ADIL DAN SEJAHTERA
                       </p>
                     </div>
-                    <div>
-                      <h4 className="font-playfair text-xl font-semibold text-village-green-dark mb-3">Misi:</h4>
-                      <ul className="font-inter text-muted-foreground space-y-2 text-lg">
-                        <li className="flex items-start gap-2">
-                          <span className="text-village-green mt-1">•</span>
-                          Meningkatkan kesejahteraan masyarakat
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-village-green mt-1">•</span>
-                          Mengembangkan potensi ekonomi lokal
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-village-green mt-1">•</span>
-                          Melestarikan budaya dan tradisi
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-village-green mt-1">•</span>
-                          Membangun infrastruktur yang memadai
-                        </li>
-                      </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Misi Card */}
+                <Card className="bg-white border-2 border-village-green shadow-xl">
+                  <CardHeader className="pb-4">
+                    <CardTitle className="font-playfair text-2xl text-village-green-dark flex items-center gap-3">
+                      <Target className="w-7 h-7" />
+                      MISI
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="bg-village-green-light rounded-lg p-5 border-l-4 border-village-green">
+                        <div className="flex items-start gap-3">
+                          <div className="bg-village-green text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mt-1">
+                            1
+                          </div>
+                          <p className="font-inter text-village-green-dark text-lg leading-relaxed font-medium">
+                            Meningkatkan profesionalisme dan kualitas SDM aparatur desa
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-village-green-light rounded-lg p-5 border-l-4 border-village-green">
+                        <div className="flex items-start gap-3">
+                          <div className="bg-village-green text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mt-1">
+                            2
+                          </div>
+                          <p className="font-inter text-village-green-dark text-lg leading-relaxed font-medium">
+                            Meningkatkan pembangunan fisik dan non-fisik di berbagai bidang
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-village-green-light rounded-lg p-5 border-l-4 border-village-green">
+                        <div className="flex items-start gap-3">
+                          <div className="bg-village-green text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mt-1">
+                            3
+                          </div>
+                          <p className="font-inter text-village-green-dark text-lg leading-relaxed font-medium">
+                            Menggali potensi desa dalam rangka mencari sumber PAD desa
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-village-green-light rounded-lg p-5 border-l-4 border-village-green">
+                        <div className="flex items-start gap-3">
+                          <div className="bg-village-green text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mt-1">
+                            4
+                          </div>
+                          <p className="font-inter text-village-green-dark text-lg leading-relaxed font-medium">
+                            Mengupayakan penuntasan batas lahan dan kejelasan lahan usaha dua
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-village-green-light rounded-lg p-5 border-l-4 border-village-green">
+                        <div className="flex items-start gap-3">
+                          <div className="bg-village-green text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mt-1">
+                            5
+                          </div>
+                          <p className="font-inter text-village-green-dark text-lg leading-relaxed font-medium">
+                            Optimalisasi BUMDes untuk peningkatan kesejahteraan dan ekonomi desa
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             </TabsContent>
 
             <TabsContent value="geografis" className="mt-6">
@@ -576,7 +630,11 @@ const Index = () => {
                 <p className="font-inter mb-4 opacity-90">
                   Sampaikan keluhan dan saran untuk kemajuan desa
                 </p>
-                <Button variant="secondary" className="bg-white text-village-green hover:bg-gray-100">
+                <Button 
+                  variant="secondary" 
+                  className="bg-white text-village-green hover:bg-gray-100"
+                  onClick={() => scrollToSection('pengaduan-section')}
+                >
                   Kirim Pengaduan
                 </Button>
               </CardContent>
@@ -606,9 +664,84 @@ const Index = () => {
                 <p className="font-inter mb-4 text-white opacity-90">
                   Hubungi layanan darurat dan kontak penting
                 </p>
-                <Button variant="secondary" className="bg-white text-village-gold hover:bg-gray-100">
+                <Button 
+                  variant="secondary" 
+                  className="bg-white text-village-gold hover:bg-gray-100"
+                  onClick={() => navigate('/kontak')}
+                >
                   Lihat Kontak
                 </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Pengaduan Masyarakat Section */}
+      <section id="pengaduan-section" className="py-16 bg-village-green">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-4">
+              Pengaduan Masyarakat
+            </h2>
+            <p className="font-inter text-white opacity-90 text-lg max-w-2xl mx-auto">
+              Sampaikan aspirasi, keluhan, dan saran Anda untuk kemajuan Desa Bukit Pamewa
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="bg-white hover:shadow-lg transition-shadow duration-300">
+              <CardHeader className="text-center pb-4">
+                <MessageSquare className="w-12 h-12 mx-auto mb-4 text-village-green" />
+                <CardTitle className="font-playfair text-xl text-village-green-dark">Kirim Pengaduan</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="font-inter text-muted-foreground mb-6">
+                  Laporkan masalah atau keluhan yang perlu ditindaklanjuti oleh pemerintah desa
+                </p>
+                <Button 
+                  size="lg"
+                  className="bg-village-green hover:bg-village-green-dark w-full"
+                  onClick={() => navigate('/pengaduan')}
+                >
+                  Buat Pengaduan Baru
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white hover:shadow-lg transition-shadow duration-300">
+              <CardHeader className="text-center pb-4">
+                <FileText className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                <CardTitle className="font-playfair text-xl text-village-green-dark">Kirim Saran</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="font-inter text-muted-foreground mb-6">
+                  Berikan masukan dan ide untuk pembangunan dan kemajuan desa
+                </p>
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="border-village-green text-village-green hover:bg-village-green hover:text-white w-full"
+                  onClick={() => navigate('/saran')}
+                >
+                  Kirim Saran
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Card className="bg-white/10 border-white/20">
+              <CardContent className="p-6">
+                <h3 className="font-playfair text-xl font-semibold text-white mb-4">
+                  Komitmen Kami
+                </h3>
+                <p className="font-inter text-white opacity-90">
+                  Setiap pengaduan dan saran akan ditindaklanjuti dalam waktu maksimal 7 hari kerja. 
+                  Kami berkomitmen untuk memberikan pelayanan terbaik bagi masyarakat Desa Bukit Pamewa.
+                </p>
               </CardContent>
             </Card>
           </div>

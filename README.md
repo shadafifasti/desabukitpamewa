@@ -64,6 +64,58 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/6548d533-c30b-42fb-96e7-b01b04ef4b1f) and click on Share -> Publish.
 
+## 🚀 Deploy to Vercel
+
+This project is also ready for deployment to Vercel. Follow these steps:
+
+### 1. Prerequisites
+- Fork or push this repository to GitHub
+- Create a Vercel account at [vercel.com](https://vercel.com)
+- Have your Supabase credentials ready
+
+### 2. Deploy Steps
+
+1. **Import Project to Vercel:**
+   - Go to [Vercel Dashboard](https://vercel.com/dashboard)
+   - Click "New Project"
+   - Import your GitHub repository
+
+2. **Configure Environment Variables:**
+   Add these environment variables in Vercel:
+   ```
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+3. **Deploy:**
+   - Vercel will automatically detect it's a Vite project
+   - Build command: `npm run build`
+   - Output directory: `dist`
+   - Install command: `npm install`
+
+### 3. Supabase Configuration
+
+Make sure your Supabase project has:
+- All required tables (aparatur_desa, profil_desa, berita, galeri, etc.)
+- Row Level Security (RLS) policies configured
+- Storage buckets created (galeridesa, berita, etc.)
+- User roles table and policies
+
+### 4. Domain Configuration
+
+After deployment:
+- Add your Vercel domain to Supabase Auth settings
+- Update CORS settings if needed
+- Test all functionality in production
+
+### 5. Build Optimization
+
+The project includes:
+- ✅ Vercel configuration (`vercel.json`)
+- ✅ Environment variables setup
+- ✅ SPA routing configuration
+- ✅ Production build optimization
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!

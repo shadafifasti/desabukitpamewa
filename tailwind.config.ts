@@ -71,7 +71,9 @@ export default {
 					'green-light': 'hsl(var(--village-green-light))',
 					'green-dark': 'hsl(var(--village-green-dark))',
 					gold: 'hsl(var(--village-gold))',
-					'gold-light': 'hsl(var(--village-gold-light))'
+					'gold-light': 'hsl(var(--village-gold-light))',
+					brown: '#8B4513',
+					'brown-light': '#A0522D'
 				}
 			},
 			borderRadius: {

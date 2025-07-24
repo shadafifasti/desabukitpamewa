@@ -231,33 +231,124 @@ export default function Profil() {
                     </div>
                   </div>
                 ) : (
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-xl font-semibold mb-3">Visi:</h4>
-                      <p className="text-muted-foreground text-lg leading-relaxed">
-                        Menjadi desa yang sejahtera, maju, dan mandiri berdasarkan nilai-nilai gotong royong.
-                      </p>
+                  <div className="space-y-8">
+                    {/* VISI Section */}
+                    <div className="relative">
+                      <div className="bg-gradient-to-r from-village-green/10 to-village-brown/10 rounded-xl p-6 border-l-4 border-village-green">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-10 h-10 bg-village-green rounded-full flex items-center justify-center">
+                            <Users className="w-5 h-5 text-white" />
+                          </div>
+                          <h4 className="text-2xl font-bold text-village-green">VISI</h4>
+                        </div>
+                        <div className="bg-white rounded-lg p-6 shadow-md">
+                          <p className="text-xl font-semibold text-center text-gray-800 leading-relaxed">
+                            "BERSATU MEMBANGUN BUKIT PAMEWA YANG JUJUR, ADIL DAN SEJAHTERA"
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xl font-semibold mb-3">Misi:</h4>
-                      <ul className="text-muted-foreground space-y-2 text-lg">
-                        <li className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          Meningkatkan kesejahteraan masyarakat
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          Mengembangkan potensi ekonomi lokal
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          Melestarikan budaya dan tradisi
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          Membangun infrastruktur yang memadai
-                        </li>
-                      </ul>
+
+                    {/* MISI Section */}
+                    <div className="relative">
+                      <div className="bg-gradient-to-r from-village-brown/10 to-village-green/10 rounded-xl p-6 border-l-4 border-village-brown">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-10 h-10 bg-village-brown rounded-full flex items-center justify-center">
+                            <FileText className="w-5 h-5 text-white" />
+                          </div>
+                          <h4 className="text-2xl font-bold text-village-brown">MISI</h4>
+                        </div>
+                        <div className="bg-white rounded-lg p-6 shadow-md">
+                          <div className="grid gap-4">
+                            <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-village-green/5 to-transparent rounded-lg hover:shadow-md transition-shadow">
+                              <div className="w-8 h-8 bg-village-green text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">
+                                1
+                              </div>
+                              <p className="text-gray-700 leading-relaxed">
+                                Meningkatkan profesionalisme dan kualitas SDM aparatur desa
+                              </p>
+                            </div>
+                            <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-village-brown/5 to-transparent rounded-lg hover:shadow-md transition-shadow">
+                              <div className="w-8 h-8 bg-village-brown text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">
+                                2
+                              </div>
+                              <p className="text-gray-700 leading-relaxed">
+                                Meningkatkan pembangunan fisik dan non-fisik di berbagai bidang
+                              </p>
+                            </div>
+                            <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-village-green/5 to-transparent rounded-lg hover:shadow-md transition-shadow">
+                              <div className="w-8 h-8 bg-village-green text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">
+                                3
+                              </div>
+                              <p className="text-gray-700 leading-relaxed">
+                                Menggali potensi desa dalam rangka mencari sumber PAD desa
+                              </p>
+                            </div>
+                            <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-village-brown/5 to-transparent rounded-lg hover:shadow-md transition-shadow">
+                              <div className="w-8 h-8 bg-village-brown text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">
+                                4
+                              </div>
+                              <p className="text-gray-700 leading-relaxed">
+                                Mengupayakan penuntasan batas lahan dan kejelasan lahan usaha dua
+                              </p>
+                            </div>
+                            <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-village-green/5 to-transparent rounded-lg hover:shadow-md transition-shadow">
+                              <div className="w-8 h-8 bg-village-green text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">
+                                5
+                              </div>
+                              <p className="text-gray-700 leading-relaxed">
+                                Optimalisasi BUMDes untuk peningkatan kesejahteraan dan ekonomi desa
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* MOTTO Section */}
+                    <div className="relative">
+                      <div className="bg-gradient-to-r from-village-gold/20 via-village-green/10 to-village-brown/20 rounded-xl p-6 border border-village-gold/30">
+                        <div className="text-center">
+                          <div className="inline-flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 bg-village-gold rounded-full flex items-center justify-center">
+                              <Building2 className="w-5 h-5 text-white" />
+                            </div>
+                            <h4 className="text-2xl font-bold text-village-gold">MOTTO DESA</h4>
+                            <div className="w-10 h-10 bg-village-gold rounded-full flex items-center justify-center">
+                              <Building2 className="w-5 h-5 text-white" />
+                            </div>
+                          </div>
+                          <div className="bg-white rounded-lg p-8 shadow-lg">
+                            <h5 className="text-3xl font-bold text-village-green mb-4">BUKIT PAMEWA (BERNAS)</h5>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                              <div className="p-4 bg-gradient-to-b from-village-green/10 to-transparent rounded-lg">
+                                <div className="w-12 h-12 bg-village-green rounded-full mx-auto mb-2 flex items-center justify-center">
+                                  <span className="text-white font-bold text-lg">B</span>
+                                </div>
+                                <p className="font-semibold text-village-green">Bersatu</p>
+                              </div>
+                              <div className="p-4 bg-gradient-to-b from-village-brown/10 to-transparent rounded-lg">
+                                <div className="w-12 h-12 bg-village-brown rounded-full mx-auto mb-2 flex items-center justify-center">
+                                  <span className="text-white font-bold text-lg">N</span>
+                                </div>
+                                <p className="font-semibold text-village-brown">Nyaman</p>
+                              </div>
+                              <div className="p-4 bg-gradient-to-b from-village-green/10 to-transparent rounded-lg">
+                                <div className="w-12 h-12 bg-village-green rounded-full mx-auto mb-2 flex items-center justify-center">
+                                  <span className="text-white font-bold text-lg">A</span>
+                                </div>
+                                <p className="font-semibold text-village-green">Aman</p>
+                              </div>
+                              <div className="p-4 bg-gradient-to-b from-village-gold/20 to-transparent rounded-lg">
+                                <div className="w-12 h-12 bg-village-gold rounded-full mx-auto mb-2 flex items-center justify-center">
+                                  <span className="text-white font-bold text-lg">S</span>
+                                </div>
+                                <p className="font-semibold text-village-gold">Sejahtera</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
