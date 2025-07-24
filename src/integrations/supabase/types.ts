@@ -209,21 +209,39 @@ export type Database = {
       peta_desa: {
         Row: {
           created_at: string
-          google_maps_url: string | null
+          deskripsi: string | null
+          gambar_filename: string | null
+          gambar_url: string | null
           id: string
-          nama_lokasi: string
+          judul: string
+          koordinat_lat: number | null
+          koordinat_lng: number | null
+          updated_at: string
+          zoom_level: number | null
         }
         Insert: {
           created_at?: string
-          google_maps_url?: string | null
+          deskripsi?: string | null
+          gambar_filename?: string | null
+          gambar_url?: string | null
           id?: string
-          nama_lokasi: string
+          judul: string
+          koordinat_lat?: number | null
+          koordinat_lng?: number | null
+          updated_at?: string
+          zoom_level?: number | null
         }
         Update: {
           created_at?: string
-          google_maps_url?: string | null
+          deskripsi?: string | null
+          gambar_filename?: string | null
+          gambar_url?: string | null
           id?: string
-          nama_lokasi?: string
+          judul?: string
+          koordinat_lat?: number | null
+          koordinat_lng?: number | null
+          updated_at?: string
+          zoom_level?: number | null
         }
         Relationships: []
       }

@@ -21,6 +21,7 @@ import AdminKontak from "./pages/AdminKontak";
 import Perdes from "./pages/Perdes";
 import Perkades from "./pages/Perkades";
 import SuratKeputusan from "./pages/SuratKeputusan";
+import PetaDesa from "./pages/PetaDesa";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/perdes" element={<Perdes />} />
             <Route path="/perkades" element={<Perkades />} />
             <Route path="/surat-keputusan" element={<SuratKeputusan />} />
+            <Route path="/peta-desa" element={<PetaDesa />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

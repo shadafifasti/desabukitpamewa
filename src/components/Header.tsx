@@ -13,6 +13,7 @@ const navigationItems = [
   { path: "/galeri", label: "Galeri", icon: Camera },
   { path: "/aparatur", label: "Aparatur", icon: Building2 },
   { path: "/lembaga", label: "Lembaga", icon: Users },
+  { path: "/peta-desa", label: "Peta Desa", icon: MapPin },
   { path: "/anggaran", label: "Transparansi", icon: DollarSign },
   { path: "/statistik", label: "Statistik", icon: BarChart3 },
   { path: "/kontak", label: "Kontak", icon: Phone },
